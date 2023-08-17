@@ -1,14 +1,10 @@
-import { useState } from 'react'
-import './App.css'
-import ApiCall from './components/ApiCall'
+
 
 function App() {
+  useDebugRender();
 
   return (
-    <>
-     <ApiCall />
-    </>
-  )
+
 }
 
-export default App
+export default App;
