@@ -1,8 +1,20 @@
-# React + Vite
+# Chingu Voyager 25
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## About The Project
 
-Currently, two official plugins are available:
+- Tier 2
+- Team 25
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Team Members
+
+| Name             | Role           |
+| ---------------- | -------------- |
+| Andres Court     | Voyage Guide   |
+| Nitya Nadimpalli | UI/UX Designer |
+| Minahil Akhtar   | Web Developers |
+| Mahmudul Hasan   | Web Developers |
+| Anderson Marques | Web Developers |
+| Jamal Kayed      | Web Developers |
+
+Project Guidelines:
+https://github.com/chingu-voyages/voyage-project-tier2-fireball
