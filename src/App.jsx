@@ -1,15 +1,30 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import useDebugRender from "tilg";
+import Layout from "./layout/Layout";
 import HomePage from "./routes/HomePage";
+import CardPage from "./routes/CardPage";
 import ErrorPage from "./routes/ErrorPage";
-import { homeLoader } from "./utils/loaders";
+import { layoutLoader } from "./utils/loaders";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <HomePage />,
+    element: <Layout />,
     errorElement: <ErrorPage />,
-    loader: homeLoader,
+    loader: layoutLoader,
+    id: "root",
+    children: [
+      {
+        index: true,
+        element: <HomePage />,
+        errorElement: <ErrorPage />,
+      },
+      {
+        path: "card",
+        element: <CardPage />,
+        errorElement: <ErrorPage />,
+      },
+    ],
   },
 ]);
 
