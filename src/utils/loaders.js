@@ -1,6 +1,6 @@
 import { fetchStrikes } from "./api";
 
-export async function homeLoader() {
+export async function layoutLoader() {
   const strikesList = await fetchStrikes();
   return { strikesList };
 }

@@ -1,20 +1,14 @@
-import { useLoaderData } from "react-router-dom";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
+import { useRouteLoaderData } from "react-router-dom";
 
 function HomePage() {
-  const { strikesList } = useLoaderData();
+  const strikesList = useRouteLoaderData("root");
+  console.log("strikesList from Map View: ", strikesList);
 
   return (
-    <div className="flex h-screen flex-col items-center justify-between text-center">
-      <Navbar />
-
-      <main>
-        <h1>Content</h1>
-      </main>
-
-      <Footer />
-    </div>
+    <main>
+      <h1>HomePage</h1>
+      <h3 className="mt-4 font-bold uppercase">Map View</h3>
+    </main>
   );
 }
 
