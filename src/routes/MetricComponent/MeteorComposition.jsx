@@ -2,16 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Chart } from "react-google-charts";
 import { useRouteLoaderData } from "react-router-dom";
 
-// let top1 = 0
-// 	let top2 = 0
-// 	let top3 = 0
-// 	let top4 = 0
-// 	let top5 = 0
-// 	let top6 = 0
-// 	let top7 = 0
-// 	let top8 = 0
-// 	let top9 = 0
-// 	let top10 = 0
+
 export const data = [
   [
     "Element",
@@ -51,7 +42,7 @@ export const options = {
 
   }
 };
-// put top 7 
+
 export default function MeteorComposition() {
 	const [meteors, setMeteorData] = useState([])
 	const strikesList = [useRouteLoaderData("root")];
@@ -61,7 +52,7 @@ useEffect(() => {
 
 
 
-  // Fetch data from NASA API
+
   const filteredData = strikesList[0].strikesList.filter(item => item.recclass === 'L6');
 
   setMeteorData(filteredData)
@@ -69,34 +60,7 @@ useEffect(() => {
 
 }, [])
 
-// meteors.map((meteor) => {
-// if(meteor.recclass == 'L5') {
-// 	top1++
-// }if(meteor.recclass == 'H6') {
-// 	top2++
-// }if(meteor.recclass == 'L6') {
-// 	top3++
-// }if(meteor.recclass == 'H4') {
-// 	top4++
-// }if(meteor.recclass == 'LL5') {
-// 	top5++
-// }if(meteor.recclass == 'LL6') {
-// 	top6++
-// }
-// if(meteor.recclass == 'H5') {
-// 	top7++
-// }
-// if(meteor.recclass == 'L4') {
-// 	top8++
-// }if(meteor.recclass == 'CM2') {
-// 	top9++
-// }
-// if(meteor.recclass == 'EL6') {
-// 	top10++
-// }
 
-// })
-// console.log(top1,top2,top3,top4,top5,top6,top7,top8,top9,top10)
   return (
     <Chart
       chartType="BarChart"
