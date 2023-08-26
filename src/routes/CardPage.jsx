@@ -1,5 +1,5 @@
 import { useRouteLoaderData } from "react-router-dom";
-import AllCharts from "./MetricComponent/AllCharts";
+import AllCharts from "../components/MetricComponent/AllCharts";
 function CardPage() {
   const strikesList = useRouteLoaderData("root");
 
@@ -7,8 +7,7 @@ function CardPage() {
 
   return (
     <div>
- 
-<AllCharts/>
+      <AllCharts />
     </div>
   );
 }
