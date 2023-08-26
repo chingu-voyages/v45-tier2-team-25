@@ -40,9 +40,7 @@ const [dataPoints, setDataPoints] = useState([]);
             setDataPoints(transformedData)
             {dataPoints && setShowData(true)}
           }, []);
-    console.log(totalMass) 
-    console.log(dataPoints) 
-console.log(Math.ceil((totalMass / dataPoints.length)))
+
 const data = dataPoints
     return (
 		<div>
