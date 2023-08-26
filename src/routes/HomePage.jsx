@@ -1,5 +1,4 @@
 import { useRouteLoaderData } from "react-router-dom";
-import DataDisplay from "./DataDisplay";
 import WorldMap from "./WorldMap/WorldMap";
 function HomePage() {
   const strikesList = useRouteLoaderData("root");
