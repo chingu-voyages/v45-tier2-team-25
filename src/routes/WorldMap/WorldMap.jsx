@@ -2,7 +2,7 @@ import { VectorMap } from "@react-jvectormap/core";
 import { worldMill } from "@react-jvectormap/world";
 import React, {useState, useEffect} from "react";
 import { useRouteLoaderData } from "react-router-dom";
-// import { colorScale, countries, missingCountries } from "./Countries";
+
 import '../WorldMap/WorldMap.css'
 
 
@@ -18,7 +18,6 @@ function WorldMap() {
 const colorScale = ["#E2AEFF", "#5E32CA"];
 const strikesList = [useRouteLoaderData("root")];
 
-console.log(strikesList)
 useEffect(() => {
 
   const filteredData = strikesList[0].strikesList.filter(item => item.recclass === 'L5');
@@ -29,7 +28,7 @@ setShowMarkers(true)
 }, [])
 
 
-console.log(data)
+
  const missingCountries = [
  data.map((Meteor) => (
 {name: Meteor.name, latLng: Meteor.reclat ? [Meteor.geolocation.latitude,Meteor.geolocation.longitude] : ["-33.16667","-64.95"], 
@@ -39,7 +38,7 @@ composition: Meteor.recclass ? Meteor.recclass : '', status: Meteor.fall ? Meteo
   ))
 
 ];
-console.log(missingCountries[0])
+
   return (
     <div style={{ margin: "auto", width: "1895px", height: "900px" }}>
     {showMarkers &&   <VectorMap
