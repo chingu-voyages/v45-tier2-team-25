@@ -1,0 +1,31 @@
+.overflow_x_auto {
+  margin-top: 120px;
+}
+.name {
+  position: absolute;
+  right: 1200px;
+}
+.mass {
+  position: absolute;
+  right: 1050px;
+}
+.latitude {
+  position: absolute;
+  right: 850px;
+}
+.longitude {
+  position: absolute;
+  right: 650px;
+}
+.year {
+  position: absolute;
+  right: 450px;
+}
+.fall {
+  position: absolute;
+  right: 250px;
+}
+.Meteor_line {
+  margin-top: 50px;
+  width: 1200px;
+}
