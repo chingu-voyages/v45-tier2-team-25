@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import Search from "./Search";
 
 function Navbar() {
   return (
@@ -34,13 +35,7 @@ function Navbar() {
           </NavLink>
         </div>
       </div>
-      <div className="w-1/3 flex-none">
-        <input
-          type="text"
-          placeholder="Search"
-          className="input join-item input-bordered w-full border-base-300"
-        />
-      </div>
+      <Search />
     </header>
   );
 }

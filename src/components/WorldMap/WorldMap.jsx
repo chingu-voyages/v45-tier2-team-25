@@ -1,15 +1,13 @@
+import { useState, useEffect } from "react";
+import { useRouteLoaderData } from "react-router-dom";
 import { VectorMap } from "@react-jvectormap/core";
 import { worldMill } from "@react-jvectormap/world";
-import React, { useState, useEffect } from "react";
-import { useRouteLoaderData } from "react-router-dom";
-
 import "./WorldMap.css";
 
 const countries = {};
 function WorldMap() {
   const [data, setData] = useState([]);
   const [showMarkers, setShowMarkers] = useState(false);
-
   const colorScale = ["#E2AEFF", "#5E32CA"];
   const strikesList = [useRouteLoaderData("root")];
 
@@ -17,7 +15,6 @@ function WorldMap() {
     const filteredData = strikesList[0].strikesList.filter(
       (item) => item.recclass === "L5",
     );
-
     setData(filteredData);
     setShowMarkers(true);
   }, []);
