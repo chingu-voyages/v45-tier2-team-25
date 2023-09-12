@@ -16,7 +16,7 @@ function TotalStrikes() {
   return (
     <div className={classes.overflow_x_auto}>
       <h2>Total Strikes</h2>
-      <table class="table table-xs">
+      <table className="table table-xs">
         <thead>
           <tr>
             <th></th>

@@ -3,7 +3,7 @@ import AllCharts from "../components/MetricComponent/AllCharts";
 function CardPage() {
   return (
     <main>
-      <AllCharts />
+      <h2>Card View</h2>
     </main>
   );
 }
