@@ -1,3 +1,11 @@
+body {
+  overflow-x: Hidden;
+}
+.label-test {
+  position: absolute;
+  margin-left: 65px;
+  top: 165px;
+}
 .country-label {
   background-color: #dfe2e4;
   border-radius: 6px;
@@ -16,7 +24,7 @@
 }
 .label {
   background-color: #dfe2e4;
-
+  opacity: 1;
   margin-top: 0px;
   min-height: 50px;
   height: 160px;
@@ -68,4 +76,113 @@
   left: 190px;
   font-size: 14px;
   bottom: 10px;
+}
+
+.Meteor_Info-Name {
+  font-size: 23px;
+  text-align: left;
+}
+.Meteor_Info-Name-info {
+  position: absolute;
+  top: 60px;
+  left: 220px;
+  font-size: 19px;
+  font-weight: bold;
+}
+.Meteor_Info-Composition {
+  margin-top: 20px;
+  font-size: 23px;
+  text-align: left;
+}
+.Meteor_Info-Composition-info {
+  position: absolute;
+  top: 115px;
+  left: 220px;
+  font-size: 19px;
+  font-weight: bold;
+}
+.Meteor_Info-Mass {
+  margin-top: 20px;
+  font-size: 23px;
+  text-align: left;
+}
+.Meteor_Info-Mass-info {
+  position: absolute;
+  top: 171px;
+  left: 220px;
+  font-size: 19px;
+  font-weight: bold;
+}
+
+.Meteor_Info-Status {
+  margin-top: 20px;
+  font-size: 23px;
+  text-align: left;
+}
+.Meteor_Info-Status-info {
+  position: absolute;
+  top: 225px;
+  left: 220px;
+  font-size: 19px;
+  font-weight: bold;
+}
+
+.Meteor_Info-Year {
+  margin-top: 20px;
+  font-size: 23px;
+  text-align: left;
+}
+.Meteor_Info-Year-info {
+  position: absolute;
+  top: 279px;
+  left: 220px;
+  font-size: 19px;
+  font-weight: bold;
+}
+
+.Meteor_Info-Longitude {
+  margin-top: 20px;
+  font-size: 23px;
+  text-align: left;
+}
+.Meteor_Info-Longitude-info {
+  position: absolute;
+  top: 333px;
+  left: 220px;
+  font-size: 19px;
+  font-weight: bold;
+}
+
+.Meteor_Info-Latitude {
+  margin-top: 20px;
+  font-size: 23px;
+  text-align: left;
+}
+.Meteor_Info-Latitude-info {
+  position: absolute;
+  top: 388px;
+  left: 220px;
+  font-size: 19px;
+  font-weight: bold;
+}
+.Meteor_detail-map {
+  width: 100px;
+}
+
+.Detailed_Location {
+  font-size: 22px;
+  margin-left: 469px;
+}
+
+.leaflet-container {
+  top: 70px;
+  left: 600px;
+  position: absolute;
+  width: 300px;
+  height: 40vh;
+}
+.btn {
+  position: absolute;
+  top: 240px;
+  margin-left: 930px;
 }
