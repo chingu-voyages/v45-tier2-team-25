@@ -5,7 +5,7 @@ import HomePage from "./routes/HomePage";
 import CardPage from "./routes/CardPage";
 import ErrorPage from "./routes/ErrorPage";
 import { layoutLoader } from "./utils/loaders";
-
+import ChartPage from "./routes/ChartPage";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -22,6 +22,11 @@ const router = createBrowserRouter([
       {
         path: "card",
         element: <CardPage />,
+        errorElement: <ErrorPage />,
+      },
+      {
+        path: "chart",
+        element: <ChartPage />,
         errorElement: <ErrorPage />,
       },
     ],
