@@ -32,7 +32,7 @@ const Modal = ({ strikes, closeModal, selectedItem }) => {
           const getCurrYear = new Date(currYear);
           const getYear = getCurrYear.getFullYear();
           return (
-            <div className="modal-wrapper" key={id} onClick={() => { closeModal(); }}>
+            <div className="modal-wrapper" key={id}>
               <div className="modal-container">
                 <div className="grid grid-cols-1 md:grid-cols-2 sm:grid-cols-2 gap-4">
                   <div className="strike-detail">
@@ -90,7 +90,7 @@ const Modal = ({ strikes, closeModal, selectedItem }) => {
                   <div className="strike-img">
 
                     <img src="../rock.jpg" alt="" />
-                    {/* <button className='modal-btn' onClick={() => { closeModal(); }}>Cloese</button> */}
+                    <button className='modal-btn my-3' onClick={() => { closeModal(); }}>Close</button>
                   </div>
                 </div>
                 

@@ -6,18 +6,6 @@
     padding: 0;
     box-sizing: border-box;
   }
-  h2{
-      font-size: 2.4rem;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-    p{
-      font-size: 1.4rem;
-      margin: 1rem 0 2.4rem 0;
-      line-height: 0rem;
-      color: #212121;
-      font-weight: 400;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
     .image-container {
       position: relative;
       width: 300px; /* Adjust the size as needed */
@@ -26,12 +14,12 @@
       border-radius: 20px;
     }
     
-    img {
+    /* .image-container img {
       max-width: 100%;
       height: auto;
       transition: opacity 0.3s ease;
   
-    }
+    } */
     
     .overlay {
       position: absolute;
@@ -58,20 +46,9 @@
     .image-container:hover .overlay {
       opacity: 1;
     }
-    table tr {
-      font-weight: 600;
-        line-height: 45px;
-    }
-    table{
-      margin-left: 20px;
-    }
-    h2{
-      font-size: 2.4rem;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-    p{
+   
+    .image-container p{
       font-size: 1.4rem;
-      margin: 1rem 0 2.4rem 0;
       line-height: 0rem;
       color: #212121;
       font-weight: 400;
@@ -127,33 +104,39 @@
       transition: all 0.1s;
       box-shadow: rgb(0, 0, 0,0.16) 0px 1px 4px, rgb(51, 51,51) 0px 0px 0px 3px;
     }
-    table {
+    .strike-detail table {
       text-align: left;
     }
     /* table, th, td {
       border:1px solid black;
     } */
-    table td{
+    .strike-detail table td{
       line-height: 37px;
       padding-right: 20px;
     }
-    table .value td{
+    .strike-detail table .value td{
       font-weight: 500;
         font-size: 20px;
         padding-left: 20px;
     }
-    table td{
+    .strike-detail table td{
       font-weight: 400;
       font-size: 16px;
     }
-    
+    .strike-detail table tr {
+      font-weight: 600;
+        line-height: 45px;
+    }
+    .strike-detail table{
+      margin-left: 20px;
+    }
     @media screen and (max-width: 630px) {
-      table .value td{
+     .strike-detail table .value td{
         font-weight: 400;
           font-size: 14px;
           padding-left: 10px;
       }
-      table td{
+      .strike-detail table td{
         font-weight: 400;
         font-size: 13px;
       }
