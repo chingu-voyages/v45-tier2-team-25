@@ -44,19 +44,19 @@ export default function StrikesData(props) {
   {
     meteorData.map((Meteor, index) => (
       <div key={index}>
-        {Meteor.year.split("-")[0] > 1800 && Meteor.year.split("-")[0] < 1850
+        {Meteor.year && Meteor.year.split("-")[0] > 1800 && Meteor.year.split("-")[0] < 1850
           ? YearOne++
           : ""}
-        {Meteor.year.split("-")[0] > 1850 && Meteor.year.split("-")[0] < 1900
+        {Meteor.year && Meteor.year.split("-")[0] > 1850 && Meteor.year.split("-")[0] < 1900
           ? YearTwo++
           : ""}
-        {Meteor.year.split("-")[0] > 1900 && Meteor.year.split("-")[0] < 1950
+        {Meteor.year && Meteor.year.split("-")[0] > 1900 && Meteor.year.split("-")[0] < 1950
           ? YearThree++
           : ""}
-        {Meteor.year.split("-")[0] > 1950 && Meteor.year.split("-")[0] < 2000
+        {Meteor.year && Meteor.year.split("-")[0] > 1950 && Meteor.year.split("-")[0] < 2000
           ? YearFour++
           : ""}
-        {Meteor.year.split("-")[0] > 2000 && Meteor.year.split("-")[0] < 2025
+        {Meteor.year  &&Meteor.year.split("-")[0] > 2000 && Meteor.year.split("-")[0] < 2025
           ? YearFive++
           : ""}
       </div>
