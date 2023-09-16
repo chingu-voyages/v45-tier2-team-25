@@ -27,7 +27,7 @@ export const data = [
 ];
 
 export const options = {
-  title: "Meteor compostions",
+  title: "Most common Meteor compostions",
   width: 1500,
   height: 500,
   bar: { groupWidth: "95%" },
@@ -40,17 +40,17 @@ export const options = {
   },
 };
 
-export default function MeteorComposition() {
+export default function MeteorComposition(props) {
   const [meteors, setMeteorData] = useState([]);
   const strikesList = [useRouteLoaderData("root")];
 
   useEffect(() => {
     const filteredData = strikesList[0].strikesList.filter(
-      (item) => item.recclass === "L6",
+      (item) => item.recclass === props.mass,
     );
 
     setMeteorData(filteredData);
-  }, []);
+  }, [props.mass]);
 
   return (
     <Chart

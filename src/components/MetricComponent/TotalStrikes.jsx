@@ -1,21 +1,21 @@
 import { useEffect, useState } from "react";
 import classes from "../MetricComponent/TotalStrikes.module.css";
 import { useRouteLoaderData } from "react-router-dom";
-function TotalStrikes() {
+function TotalStrikes(props) {
   const [data, setData] = useState([]);
   const strikesList = [useRouteLoaderData("root")];
-
   useEffect(() => {
     const filteredData = strikesList[0].strikesList.filter(
-      (item) => item.recclass === "L6",
+      (item) => item.recclass === props.mass,
     );
 
     setData(filteredData);
-  }, []);
+  }, [props.mass]);
   let prev = 0;
+
   return (
     <div className={classes.overflow_x_auto}>
-      <h2>Total Strikes</h2>
+      <h2>All strikes with {props.mass} composition</h2>
       <table className="table table-xs">
         <thead>
           <tr>

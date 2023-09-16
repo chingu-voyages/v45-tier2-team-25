@@ -4,45 +4,65 @@ import { useRouteLoaderData } from "react-router-dom";
 
 export default function StrikesData(props) {
   const [meteorData, setMeteorData] = useState([]);
-  const [showComposition, setShowComposition] = useState(false);
+
   const strikesList = [useRouteLoaderData("root")];
   let YearOne = 0;
   let YearTwo = 0;
   let YearThree = 0;
   let YearFour = 0;
   let YearFive = 0;
-
   useEffect(() => {
     const filteredData = strikesList[0].strikesList.filter(
-      (item) => item.recclass === "L6",
+      (item) => item.recclass === props.mass,
     );
 
     setMeteorData(filteredData);
-    setShowComposition(true);
-  }, []);
+  }, [props.mass]);
+
+  if (meteorData.length > 0) {
+    meteorData.map((Meteor, index) => (
+      <div key={index}>
+        {Meteor.year && Meteor.year.split("-")[0] > 1800 && Meteor.year.split("-")[0] < 1850
+          ? YearOne++
+          : ""}
+        {Meteor.year && Meteor.year.split("-")[0] > 1850 && Meteor.year.split("-")[0] < 1900
+          ? YearTwo++
+          : ""}
+        {Meteor.year && Meteor.year.split("-")[0] > 1900 && Meteor.year.split("-")[0] < 1950
+          ? YearThree++
+          : ""}
+        {Meteor.year && Meteor.year.split("-")[0] > 1950 && Meteor.year.split("-")[0] < 2000
+          ? YearFour++
+          : ""}
+        {Meteor.year && Meteor.year.split("-")[0] > 2000 && Meteor.year.split("-")[0] < 2025
+          ? YearFive++
+          : ""}
+      </div>
+    ));
+  }
 
   {
-    showComposition &&
-      meteorData.map((Meteor, index) => (
-        <div key={index}>
-          {Meteor.year.split("-")[0] > 1800 && Meteor.year.split("-")[0] < 1850
-            ? YearOne++
-            : ""}
-          {Meteor.year.split("-")[0] > 1850 && Meteor.year.split("-")[0] < 1900
-            ? YearTwo++
-            : ""}
-          {Meteor.year.split("-")[0] > 1900 && Meteor.year.split("-")[0] < 1950
-            ? YearThree++
-            : ""}
-          {Meteor.year.split("-")[0] > 1950 && Meteor.year.split("-")[0] < 2000
-            ? YearFour++
-            : ""}
-          {Meteor.year.split("-")[0] > 2000 && Meteor.year.split("-")[0] < 2025
-            ? YearFive++
-            : ""}
-        </div>
-      ));
+    meteorData.map((Meteor, index) => (
+      <div key={index}>
+        {Meteor.year.split("-")[0] > 1800 && Meteor.year.split("-")[0] < 1850
+          ? YearOne++
+          : ""}
+        {Meteor.year.split("-")[0] > 1850 && Meteor.year.split("-")[0] < 1900
+          ? YearTwo++
+          : ""}
+        {Meteor.year.split("-")[0] > 1900 && Meteor.year.split("-")[0] < 1950
+          ? YearThree++
+          : ""}
+        {Meteor.year.split("-")[0] > 1950 && Meteor.year.split("-")[0] < 2000
+          ? YearFour++
+          : ""}
+        {Meteor.year.split("-")[0] > 2000 && Meteor.year.split("-")[0] < 2025
+          ? YearFive++
+          : ""}
+      </div>
+    ));
   }
+
   var options = {
     legend: "none",
     hAxis: {

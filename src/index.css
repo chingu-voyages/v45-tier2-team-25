@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.mass-Search{
+    display: flex;
+    width: 1300px;
+    position: absolute;
+    margin-top:0px;
+    margin-left: 1320px;
+}
+.search_Icon{
+    position: absolute;
+    width: 40px;
+    height: auto;
+    top: 15px;
+    left: -70px;
+
+}
