@@ -1,37 +1,18 @@
-import React, { useEffect } from 'react'
-import { useState } from 'react';
-import Modal from './Modal'; 
-// import Navbar from '../Navbar';
-import Search from './Search';
+import { useEffect } from "react";
+import { useState } from "react";
+import Modal from "./Modal";
+import Search from "./Search";
 import "./DetailDisplay.css";
-
+import { useRouteLoaderData } from "react-router-dom";
 const DetailCard = () => {
-
-  const API = "https://data.nasa.gov/resource/gh4g-9sfh.json";
-  
-  const [strikes, setStrikes] = useState([]);
-  const [selectedItem, setSelectedItem] = useState()
-  const [filteredStrikes, setFilteredStrikes] = useState(strikes);
-
-  const fetchStrikes = async (url) => {
-    try {
-      const res = await fetch(url);
-      const data = await res.json();
-      if (data.length > 0) {
-        setStrikes(data);
-      }
-      console.log(data);
-    } catch (e) {
-      console.error(e)
-    }
-  }
-  useEffect(() => {
-    fetchStrikes(API);
-  }, [])
+  const strikesList = [useRouteLoaderData("root")];
+  const [selectedItem, setSelectedItem] = useState();
+  const [filteredStrikes, setFilteredStrikes] = useState([]);
+  const [selectedMeteor, setSelectedMeteor] = useState([]);
+  const [showSearch, setShowSearch] = useState(true);
 
   const openModal = (currStrike) => {
     setSelectedItem(currStrike);
-
   };
 
   const closeModal = () => {
@@ -43,53 +24,79 @@ const DetailCard = () => {
   // const openModal = () => {
   //   setShowModal(true);
   // }
-
+  // function ShowSearchHandler() {
+  //   setShowSearch(true);
+  // }
 
   const filterData = (searchTerm) => {
-    if (!searchTerm) {
-      // If search term is empty, reset to original data
-      setFilteredStrikes(strikes);
-    } else {
-      // Filter data based on search term
-      const filtered = strikes.filter((currStrike) =>
-      currStrike.name.charAt(0).toLowerCase() === searchTerm.charAt(0).toLowerCase() &&
-      currStrike.name.toLowerCase().includes(searchTerm.toLowerCase())
+    // Filter data based on search term
+    const filtered = strikesList[0].strikesList.filter(
+      (currStrike) =>
+        currStrike.name.toLowerCase() === searchTerm.toLowerCase(),
     );
-      setFilteredStrikes(filtered);
-    }
+    setFilteredStrikes(filtered);
+    setSelectedMeteor(filtered);
   };
-  
 
   return (
     <>
-      {selectedItem && <Modal closeModal={closeModal} strikes={strikes} selectedItem={selectedItem} />}
+      {selectedItem && (
+        <Modal
+          closeModal={closeModal}
+          strikes={selectedMeteor}
+          selectedItem={selectedItem}
+        />
+      )}
       <Search filterData={filterData} />
-      <div className='my-3'>
-        <div className="grid grid-cols-1 md:grid-cols-3 sm:grid-cols-2 gap-4">
-          {filteredStrikes.map((currStrike) => {
-            const { name, nametype, recclass, mass, fall, year, reclat, reclong, geolocation, id } = currStrike;
-            const currYear = currStrike.year;
-            const getCurrYear = new Date(currYear);
-            const getYear = getCurrYear.getFullYear();
-            return (
-              <div className="" key={id}>
-                <div className="image-container" onClick={() => { openModal(currStrike) }}>
-                  <img src="../rock.jpg" alt="Image" />
-                  <div className="overlay">
-                    <p>{name}, {getYear}</p>
-                    <h3>Mass: {mass}, Composition: {recclass}</h3>
-
+      {/* {!showSearch && (
+        <button class="btn btn-primary btn-outline" onClick={ShowSearchHandler}>
+          Search
+        </button>
+      )} */}
+      <div className="my-3">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
+          {showSearch &&
+            filteredStrikes.map((currStrike) => {
+              const {
+                name,
+                nametype,
+                recclass,
+                mass,
+                fall,
+                year,
+                reclat,
+                reclong,
+                geolocation,
+                id,
+              } = currStrike;
+              const currYear = currStrike.year;
+              const getCurrYear = new Date(currYear);
+              const getYear = getCurrYear.getFullYear();
+              return (
+                <div className="" key={id}>
+                  <div
+                    className="image-container"
+                    onClick={() => {
+                      openModal(currStrike);
+                    }}
+                  >
+                    <img src="../rock.jpg" alt="Image" />
+                    <div className="overlay">
+                      <p>
+                        {name}, {getYear}
+                      </p>
+                      <h3>
+                        Mass: {mass}, Composition: {recclass}
+                      </h3>
+                    </div>
                   </div>
                 </div>
-              </div>
-            )
-          })}
+              );
+            })}
         </div>
       </div>
-
     </>
+  );
+};
 
-  )
-}
-
-export default DetailCard
+export default DetailCard;

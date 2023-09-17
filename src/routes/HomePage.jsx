@@ -1,9 +1,14 @@
+import { useEffect, useState } from "react";
 import WorldMap from "../components/WorldMap/WorldMap";
 
-function HomePage() {
+function HomePage(props) {
+  const [mass, setMass] = useState("");
+  useEffect(() => {
+    setMass(props.mass);
+  }, [props.mass]);
   return (
     <main>
-      <WorldMap />
+      <WorldMap mass={mass} />
     </main>
   );
 }

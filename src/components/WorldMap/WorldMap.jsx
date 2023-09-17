@@ -5,22 +5,25 @@ import { useRouteLoaderData } from "react-router-dom";
 import MeteorInfo from "./MeteorInfo";
 
 const countries = {};
-function WorldMap() {
+function WorldMap(props) {
   const [data, setData] = useState([]);
   const [showMarkers, setShowMarkers] = useState(false);
-  const [name, setName] = useState("Aachan");
+  const [name, setName] = useState("");
+  const [mass, setMass] = useState("");
   const colorScale = ["#E2AEFF", "#5E32CA"];
   const strikesList = [useRouteLoaderData("root")];
-
   useEffect(() => {
+    setShowMarkers(false);
+    setMass(props.name);
     const filteredData = strikesList[0].strikesList.filter(
-      (item) => item.recclass === "L5",
+      (item) => item.recclass === props.mass,
     );
 
     setData(filteredData);
-    setShowMarkers(true);
-  }, [name]);
-
+    setTimeout(() => {
+      setShowMarkers(true);
+    });
+  }, [props.mass]);
   const missingCountries = [
     data.map((Meteor, index) => ({
       name: Meteor.name,

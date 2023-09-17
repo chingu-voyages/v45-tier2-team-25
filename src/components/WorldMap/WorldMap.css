@@ -79,6 +79,7 @@ body {
 }
 
 .Meteor_Info-Name {
+  color: black;
   font-size: 23px;
   text-align: left;
 }
@@ -90,6 +91,7 @@ body {
   font-weight: bold;
 }
 .Meteor_Info-Composition {
+  color: black;
   margin-top: 20px;
   font-size: 23px;
   text-align: left;
@@ -102,6 +104,7 @@ body {
   font-weight: bold;
 }
 .Meteor_Info-Mass {
+  color: black;
   margin-top: 20px;
   font-size: 23px;
   text-align: left;
@@ -115,6 +118,7 @@ body {
 }
 
 .Meteor_Info-Status {
+  color: black;
   margin-top: 20px;
   font-size: 23px;
   text-align: left;
@@ -128,6 +132,7 @@ body {
 }
 
 .Meteor_Info-Year {
+  color: black;
   margin-top: 20px;
   font-size: 23px;
   text-align: left;
@@ -141,6 +146,7 @@ body {
 }
 
 .Meteor_Info-Longitude {
+  color: black;
   margin-top: 20px;
   font-size: 23px;
   text-align: left;
@@ -154,6 +160,7 @@ body {
 }
 
 .Meteor_Info-Latitude {
+  color: black;
   margin-top: 20px;
   font-size: 23px;
   text-align: left;

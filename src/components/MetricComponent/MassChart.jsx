@@ -12,16 +12,15 @@ import {
 import { useRouteLoaderData } from "react-router-dom";
 
 let totalMass = 0;
-export default function MassChart() {
+export default function MassChart(props) {
   const [dataPoints, setDataPoints] = useState([]);
   const [showData, setShowData] = useState(false);
-
   const strikesList = [useRouteLoaderData("root")];
 
   useEffect(() => {
     totalMass = 0;
     const filteredData = [
-      strikesList[0].strikesList.filter((item) => item.recclass === "H5"),
+      strikesList[0].strikesList.filter((item) => item.recclass === props.mass),
     ];
 
     const transformedData = filteredData[0].map((item, index) => {
@@ -41,8 +40,7 @@ export default function MassChart() {
     {
       dataPoints && setShowData(true);
     }
-  }, []);
-
+  }, [props.mass]);
   const data = dataPoints;
   return (
     <div>
